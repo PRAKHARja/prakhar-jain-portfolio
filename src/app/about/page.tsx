@@ -1,0 +1,16 @@
+import Link from "next/link";
+import { SectionHeading } from "@/components/SectionHeading";
+import { certifications, experience, site, skills } from "@/data/site";
+import { pageMetadata } from "@/data/seo";
+
+export const metadata = pageMetadata("About", "Professional profile, education, Salesforce role and technical interests of Prakhar Jain.", "/about");
+
+export default function AboutPage() {
+  return <>
+    <section className="page-section container"><div className="page-intro"><span className="eyebrow"><i />A LITTLE ABOUT ME</span><h1>Curious about how<br />good software <em>works.</em></h1><p>I’m Prakhar, a software developer interested in building practical products across Salesforce, web applications and automation. I care about clear user experiences and maintainable implementations.</p><div className="button-row"><Link className="button button-primary" href="/projects">Explore my work <span aria-hidden="true">↗</span></Link><a className="button button-outline" href={site.linkedin} target="_blank" rel="noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a></div></div></section>
+    <section className="section section-muted"><div className="container about-facts"><div><span className="eyebrow-small">NOW</span><h2>{experience.title}<br /><span>{experience.company}</span></h2><p>{experience.dates}</p><p className="entry-note">Role responsibilities and achievements to be added.</p></div><div><span className="eyebrow-small">EDUCATION</span><h2>{site.education}</h2><p>{site.university}</p><p>{site.educationYears}</p></div></div></section>
+    <section className="section container"><SectionHeading label="WHAT I’M INTERESTED IN" title="From a solid data model to a thoughtful interface." copy="I enjoy projects that connect reliable systems with useful everyday workflows, from Salesforce automation and digital products to accessible web experiences." /><div className="about-interest-grid"><article><span>01</span><h3>Useful workflows</h3><p>Turning a repeated task into a tool people can understand and use.</p></article><article><span>02</span><h3>Human input</h3><p>Exploring interfaces that make software responsive to how people interact.</p></article><article><span>03</span><h3>Clear delivery</h3><p>Building responsive experiences with clear states and maintainable foundations.</p></article></div></section>
+    <section className="section section-muted"><div className="container about-skills"><SectionHeading label="SKILLS & CERTIFICATIONS" title="The current toolkit." /><div><div className="skill-groups">{skills.map((group) => <div className="skill-group" key={group.group}><h3>{group.group}</h3><div className="tag-list">{group.items.map((item) => <span className="tag" key={item}>{item}</span>)}</div></div>)}</div><div className="about-certs">{certifications.map((item) => <div key={item.name}><span>✳</span><p><strong>{item.name}</strong><small>{item.issuer} · {item.date}</small></p></div>)}</div></div></div></section>
+    <section className="container resume-note"><span className="eyebrow-small">RESUME</span><p>A genuine resume file is present in the Desktop folders, but its 2025 date predates the current role and credentials listed here. A current, approved version is needed before adding a download link.</p></section>
+  </>;
+}
