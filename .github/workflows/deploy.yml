@@ -36,7 +36,25 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Validate Supabase build variables
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          if [ -z "${NEXT_PUBLIC_SUPABASE_URL//[[:space:]]/}" ]; then
+            echo "::error::Required Actions variable NEXT_PUBLIC_SUPABASE_URL is missing or empty."
+            exit 1
+          fi
+
+          if [ -z "${NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY//[[:space:]]/}" ]; then
+            echo "::error::Required Actions variable NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY is missing or empty."
+            exit 1
+          fi
+
       - name: Build Next.js static site
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
         run: npm run build
 
       - name: Upload static site

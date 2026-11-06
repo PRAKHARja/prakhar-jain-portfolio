@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { site } from "@/data/site";
 import { SiteShell } from "@/components/SiteShell";
 import "./globals.css";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : undefined;
+const base = new URL(site.url);
 
 export const metadata: Metadata = {
   metadataBase: base,
-  title: { default: "Prakhar Jain — Software Developer", template: "%s | Prakhar Jain" },
-  description: "Portfolio of Prakhar Jain, a software developer working across Salesforce development, web applications and automation.",
+  title: { default: "Prakhar Jain — Salesforce Developer", template: "%s | Prakhar Jain" },
+  description: "Salesforce Developer at Wipro contributing to ServiceMax enhancements, with full-stack software, data, and computer vision experience.",
   openGraph: {
     type: "website",
     siteName: "Prakhar Jain",
-    title: "Prakhar Jain — Software Developer",
-    description: "Software development across Salesforce, web applications and automation.",
+    title: "Prakhar Jain — Salesforce Developer",
+    description: "Salesforce development, full-stack applications, data systems, and computer vision projects.",
   },
 };
 

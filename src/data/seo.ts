@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { site } from "@/data/site";
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const canonicalUrl = siteUrl ? new URL(path, siteUrl).toString() : undefined;
+  const normalizedPath = path.endsWith("/") ? path : `${path}/`;
+  const canonicalUrl = new URL(normalizedPath, site.url).toString();
 
   return {
     title,
@@ -12,8 +13,8 @@ export function pageMetadata(title: string, description: string, path: string): 
       siteName: "Prakhar Jain",
       title,
       description,
-      ...(canonicalUrl ? { url: canonicalUrl } : {}),
+      url: canonicalUrl,
     },
-    ...(canonicalUrl ? { alternates: { canonical: canonicalUrl } } : {}),
+    alternates: { canonical: canonicalUrl },
   };
 }
