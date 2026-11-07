@@ -1,7 +1,7 @@
 export const site = {
   name: "Prakhar Jain",
   title: "Salesforce Developer",
-  summary: "Salesforce Developer at Wipro contributing to ServiceMax enhancements for Beckman, with full-stack experience building web products, APIs, database workflows, payment integrations and role-based access controls.",
+  summary: "Salesforce Developer at Wipro contributing to enhancements for Beckman’s ServiceMax platform. A Salesforce Certified Platform Administrator with experience in Apex, SOQL, enterprise applications, and full-stack development using Next.js, React, TypeScript, PostgreSQL, and Prisma. Focused on building scalable software solutions across Salesforce and full-stack development.",
   linkedin: "https://www.linkedin.com/in/prakhar-jain-73063b22b/",
   github: "https://github.com/PRAKHARja",
   email: "jainprakhar641@gmail.com",
@@ -16,7 +16,10 @@ export const experience = {
   company: site.company,
   dates: "March 2026 – Present",
   responsibilities: [
-    "Contribute to enhancements for Beckman’s ServiceMax system through Salesforce development.",
+    "Contribute to Salesforce development and enhancements for Beckman’s ServiceMax platform.",
+    "Analyze, debug, and resolve development issues and application defects.",
+    "Collaborate with the team on technical enhancements and enterprise application requirements.",
+    "Use Apex and SOQL for Salesforce application development, data retrieval, and troubleshooting within ServiceMax.",
   ],
 };
 
@@ -28,7 +31,7 @@ export const education = [
   },
   {
     qualification: "CBSE Class XII",
-    institution: "Adarsh Vidhya Mandir, Bharatpur",
+    institution: "Aadarsh Vidhya Mandir, Bharatpur",
     years: "2019–2020",
   },
   {
@@ -39,14 +42,16 @@ export const education = [
 ];
 
 export const skills = [
-  { group: "Development", items: ["Salesforce", "ServiceMax", "Next.js", "React", "TypeScript", "Python", "C++", "SQL", "HTML/CSS", "Tailwind CSS"] },
-  { group: "Backend & data", items: ["REST APIs", "PostgreSQL", "Supabase", "Prisma", "Authentication", "RBAC", "CSV processing"] },
-  { group: "Integrations & tools", items: ["Razorpay", "Cloudflare R2", "Git/GitHub", "CI/CD", "OpenCV", "MediaPipe", "PyQt5"] },
+  { group: "Salesforce", items: ["Salesforce Platform", "Apex", "SOQL", "ServiceMax", "Salesforce Administration", "LWC", "Flows", "Triggers"] },
+  { group: "Programming languages", items: ["Python", "C++", "SQL", "JavaScript", "TypeScript"] },
+  { group: "Frontend development", items: ["React.js", "Next.js", "HTML", "CSS", "Tailwind CSS"] },
+  { group: "Backend & data", items: ["REST APIs", "Node.js", "Authentication", "Role-based access control (RBAC)", "PostgreSQL", "MySQL", "Supabase", "Prisma"] },
+  { group: "Tools & libraries", items: ["Git", "GitHub", "GitHub Actions", "CI/CD", "Razorpay", "Cloudflare R2", "OpenCV", "MediaPipe", "PyQt5", "PyAutoGUI"] },
 ];
 
 export const certifications = [
-  { name: "Salesforce Certified Platform Developer", issuer: "Salesforce" },
-  { name: "Salesforce Certified Agentforce 360", issuer: "Salesforce" },
+  { name: "Salesforce Certified Platform Administrator", issuer: "Salesforce" },
+  { name: "Salesforce Certified Agentforce Specialist", issuer: "Salesforce" },
   { name: "Google Python course", issuer: "Google" },
   { name: "Emotion AI facial key-points project certificate", issuer: "Emotion AI project" },
 ];

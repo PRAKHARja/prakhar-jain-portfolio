@@ -28,7 +28,7 @@ export default function HomePage() {
       </section>
 
       <section className="section section-muted">
-        <div className="container experience-layout"><div><SectionHeading label="EXPERIENCE" title="Salesforce Developer at Wipro." /><p className="muted-copy">Contributing to ServiceMax enhancements for Beckman through Salesforce development.</p></div>
+        <div className="container experience-layout"><div><SectionHeading label="EXPERIENCE" title="Salesforce Developer at Wipro." /><p className="muted-copy">Contributing to Beckman’s ServiceMax platform through Salesforce development, Apex, SOQL, and application troubleshooting.</p></div>
           <article className="experience-entry"><span className="experience-marker" /><div className="experience-main"><span className="eyebrow-small">{experience.dates}</span><h3>{experience.title}</h3><p>{experience.company}</p><ul>{experience.responsibilities.map((item) => <li key={item}>{item}</li>)}</ul></div><span className="experience-current">CURRENT ROLE</span></article>
         </div>
       </section>
